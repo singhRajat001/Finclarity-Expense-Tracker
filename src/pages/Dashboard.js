@@ -5,16 +5,11 @@ import AddExpense from "../components/Modals/addExpense";
 import AddIncome from "../components/Modals/addIncome";
 import { toast } from "react-toastify";
 import { addDoc, collection, query, getDocs, deleteDoc } from "firebase/firestore";
-// import { db } from "../firebase";
 import { db, auth } from "../firebase";
-// import moment from "moment";
 import { useAuthState } from "react-firebase-hooks/auth";
 import TransactionsTable from "../components/TransactionsTable";
 import NoTransactions from "../components/noTransactions";
 import ChartComponent from "../components/Charts";
-// import { setLogLevel } from "firebase/app";
-// import AddExpenses from "../components/Modals/addExpense";
-// import AddIncomes from "../components/Modals/addIncome";
 function Dashboard() {
   const [user] = useAuthState(auth);
   const [isExpenseVisible, setIsExpenseVisible] = useState(false);
@@ -46,17 +41,13 @@ function Dashboard() {
     const newTransaction = {
       type: type,
       date: values.date.format("YYYY-MM-DD"),
-      // date: new Date(values.date).toISOString().split("T")[0],
       amount: parseFloat(values.amount),
       tag: values.tag,
       name: values.name,
       mode: values.mode,
     };
-    // setTransactions([...transactions, newTransaction]);
-    // setIsExpenseVisible(false);
-    // setIsIncomeVisible(false);
+
     addTransaction(newTransaction);
-    // calculateBalance();
   };
 
   async function addTransaction(transaction, many) {
@@ -184,26 +175,6 @@ function Dashboard() {
         </>
       )}
     </div>
-    // <div className="dashboard-container">
-    //   <Header />
-    //   <Cards showExpense={showExpense} showIncome={showIncome} />
-
-    //   {isExpenseVisible && (
-    //     <AddExpenses
-    //       isExpenseVisible={isExpenseVisible}
-    //       handleExpenseCancel={handleExpenseCancel}
-    //       onFinish={onFinish}
-    //     />
-    //   )}
-
-    //   {isIncomeVisible && (
-    //     <AddIncomes
-    //       isIncomeVisible={isIncomeVisible}
-    //       handleIncomeCancel={handleIncomeCancel}
-    //       onFinish={onFinish}
-    //     />
-    //   )}
-    // </div>
   );
 }
 
