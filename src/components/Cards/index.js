@@ -24,23 +24,6 @@ function Cards({ showExpense, showIncome, income, expense, currentBalance, handl
           <Button bordered={true} text="Add Expense" blue={true} onClick={showExpense} />
         </Card>
       </Row>
-      {/* <div className="my-row">
-        <div className="my-card">
-          <h2>Current Balance</h2>
-          <p>Rs. 0</p>
-          <Button className="btn" text="Reset Balance" blue={true} />
-        </div>
-        <div className="my-card">
-          <h2>Total Income</h2>
-          <p>Rs. 0</p>
-          <Button className="btn" text="Add Income" blue={true} />
-        </div>
-        <div className="my-card">
-          <h2>Total Expenditure</h2>
-          <p>Rs. 0</p>
-          <Button className="btn" text="Add Expense" blue={true} />
-        </div>
-      </div> */}
     </div>
   );
 }
