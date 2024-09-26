@@ -56,18 +56,7 @@ function Header() {
         </div>
       )}
     </div>
-    // <div className="navbar">
-    //   {/* <p className="navheader">FinClarity..</p> */}
-    //   <img className="logo" src="fin.png" alt="Oops" />
-    //   {user ? (
-    //     <img
-    //       className="logout-icon"
-    //       src="/logout.png" // Replace with the actual path to your logout image
-    //       alt="w"
-    //       onClick={logoutFunc}
-    //     />
-    //   ) : null}
-    // </div>
+
   );
 }
 
